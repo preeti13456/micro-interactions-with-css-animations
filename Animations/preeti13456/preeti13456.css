@@ -1,0 +1,92 @@
+video {
+  animation-duration: 3s;
+  animation-name: bookslide;
+}
+
+@keyframes bookslide {
+   transform: rotateY(180deg) scaleX(1);
+        transform-origin: top left;
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.bookslide {
+  animation-duration: 3s;
+  animation-name: bookslide;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  box-shadow: 5px 5px 25px #000;
+  transition: all 1s;
+}
+
+/* On hover... */
+.box:hover {
+  /* Increase width */
+  width: 300px;
+  /* Change color */
+  background-color: orange;
+  /* Move the shadow */
+  box-shadow: -5px 5px 25px #000;
+}
+
+/* The first line of text */
+.box__blurb {
+  /* Start with full opacity and centered */
+  opacity: 1;
+  transform: translateX(45px);
+  /* Then transition these chained properties */
+  transition:
+    opacity 0.5s 2s,
+    transform 0.5s 0.5s;
+}
+
+/* On .box hover... */
+.box:hover .box__blurb {
+  /* Fade out */
+  opacity: 0;
+  /* Move over to the right */
+  transform: translateX(-500px);
+}
+
+/* The second line of text */
+.rect__blurb {
+  /* Start with no opacity and pushed off the element */
+  opacity: 0;
+  transform: translateX(500px);
+  /* Then transition these chained properties */
+  transition: 
+    opacity 0.5s 1s,
+    transform 0.5s 1s;
+}
+
+/* On .box hover... */
+.box:hover .rect__blurb {
+  /* Face in */
+  opacity: 1;
+  /* While entering from the right */
+  transform: translateX(-100px);
+}
+
